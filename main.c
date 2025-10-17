@@ -90,8 +90,48 @@ int main()
 
 void cityManagement(char cityName[MAX_CITIES][NAME_LENGTH], int *cityCount)
 {
+    int choice;
 
+    do
+    {
+        printf("\tCity Management\n");
+        printf("\t_______________\n");
+        printf("1-Add a new city\n");
+        printf("2-Rename city\n");
+        printf("3-Remove city\n");
+        printf("4-Exit\n");
+
+        printf("\nEnter your choice :");
+        scanf("%d",&choice);
+        printf("\n");
+
+        switch(choice)
+        {
+
+        case 1:
+            addCity(cityName,cityCount);
+            break;
+
+        case 2:
+            renameCity(cityName,cityCount);
+            break;
+
+        case 3:
+            removeCity(cityName,cityCount);
+            break;
+        case 4:
+            printf("Exiting from the City Management System");
+            break;
+
+        default:
+            printf("\nInvalid choice....!\n\n");
+
+        }
+
+    }
+    while(choice!=4);
 }
+
 void addCity(char cityName[MAX_CITIES][NAME_LENGTH], int *cityCount)
 {
 
